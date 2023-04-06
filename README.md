@@ -1,6 +1,6 @@
 # OpenAI
 
-**TODO: Add description**
+Client SDK for OpenAI generated from their [OpenAPI specification](https://github.com/openai/openai-openapi).
 
 ## Installation
 
@@ -19,3 +19,10 @@ Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_do
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at <https://hexdocs.pm/oapi_oai>.
 
+## Developing
+
+To regenerate the API
+
+```bash
+mix api.gen default ./resources/openai-openapi/openapi.yaml
+```
