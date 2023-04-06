@@ -4,10 +4,12 @@ defmodule OpenAI.MixProject do
   def project do
     [
       app: :oapi_oai,
-      version: "0.1.0",
+      version: "0.1.1",
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      package: package(),
+      description: description()
     ]
   end
 
@@ -21,7 +23,23 @@ defmodule OpenAI.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:oapi_generator, "~> 0.0.3"}
+      {:oapi_generator, "~> 0.0.3"},
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
+    ]
+  end
+
+  defp description() do
+    "Client SDK for OpenAI generated from their [OpenAPI specification](https://github.com/openai/openai-openapi)."
+  end
+
+  defp package() do
+    [
+      # This option is only needed when you don't want to use the OTP application name
+      name: "oapi_oai",
+      # These are the default files included in the package
+      files: ~w(lib .formatter.exs mix.exs README* LICENSE*),
+      licenses: ["Apache-2.0"],
+      links: %{"GitHub" => "https://github.com/fmops/oapi_oai"}
     ]
   end
 end
