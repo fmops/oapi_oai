@@ -16,7 +16,8 @@ defmodule OpenAI.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger]
+      extra_applications: [:logger],
+      mod: {OpenAI, []}
     ]
   end
 
@@ -24,6 +25,9 @@ defmodule OpenAI.MixProject do
   defp deps do
     [
       {:oapi_generator, "~> 0.0.3"},
+      {:tesla, "~> 1.6"},
+      {:finch, "~> 0.16"},
+      {:jason, ">= 1.0.0"},
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
     ]
   end
