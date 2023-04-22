@@ -6,4 +6,5 @@ config :oapi_generator,
     base_module: OpenAI
   ]
 
-config :tesla, adapter: {Tesla.Adapter.Finch, name: OpenAI.Finch}
+config :tesla,
+  adapter: {Tesla.Adapter.Finch, name: OpenAI.Finch}

@@ -15,6 +15,13 @@ def deps do
 end
 ```
 
+Configure a base URL in your application `config.exs`:
+
+```elixir
+config :oapi_oai,
+  openai_base_url: "https://fmops.ai/api/v1/openai/v1"
+```
+
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at <https://hexdocs.pm/oapi_oai>.
