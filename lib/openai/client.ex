@@ -24,5 +24,18 @@ defmodule OpenAI.Client do
       method: data.method,
       url: data.url,
       body: data.body)
+    |> case do
+      {:ok, %Tesla.Env{status: 200, body: body}} ->
+        struct = struct(data.response |> Enum.at(0) |> elem(1) |> elem(0))
+        resp = Enum.reduce Map.to_list(struct), struct, fn {k, _}, acc ->
+          case Map.fetch(body, Atom.to_string(k)) do
+            {:ok, v} -> %{acc | k => v}
+            :error -> acc
+          end
+        end
+        {:ok, resp}
+      {:error, _error} ->
+        :error
+    end
   end
 end
