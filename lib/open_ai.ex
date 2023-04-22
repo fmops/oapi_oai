@@ -1,18 +1,13 @@
 defmodule OpenAI do
-  @moduledoc """
-  Documentation for `OpenAI`.
-  """
+  use Application
 
-  @doc """
-  Hello world.
+  @impl true
+  def start(_type, _args) do
+    children = [
+      {Finch, name: OpenAI.Finch}
+    ]
 
-  ## Examples
-
-      iex> OpenAI.hello()
-      :world
-
-  """
-  def hello do
-    :world
+    opts = [strategy: :one_for_one, name: OpenAI.Supervisor]
+    Supervisor.start_link(children, opts)
   end
 end
