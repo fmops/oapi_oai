@@ -10,7 +10,7 @@ by adding `oapi_oai` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:oapi_oai, "~> 0.1.0"}
+    {:oapi_oai, "~> 0.1"}
   ]
 end
 ```
