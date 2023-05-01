@@ -32,7 +32,7 @@ defmodule OpenAI.MixProject do
       {:finch, "~> 0.16"},
       {:jason, "~> 1.4"},
       {:bypass, "~> 2.1", only: :test},
-      {:stubidity, path: "../stubidity", only: :test}
+      {:stubidity, "~> 0.3.1", only: :test}
     ]
   end
 
