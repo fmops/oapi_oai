@@ -40,9 +40,8 @@ defmodule OpenAI.Client do
       body: data.body
     )
     |> case do
-      {:ok, %Tesla.Env{status: 200, body: body} = resp} ->
+      {:ok, %Tesla.Env{status: 200, body: body}} ->
         struct = struct(data.response |> Enum.at(0) |> elem(1) |> elem(0))
-
         resp =
           Enum.reduce(Map.to_list(struct), struct, fn {k, _}, acc ->
             case Map.fetch(body, Atom.to_string(k)) do
