@@ -24,11 +24,13 @@ defmodule OpenAI.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:oapi_generator, "~> 0.0.3"},
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
+      {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
+      {:dialyxir, "~> 1.3", only: [:dev, :test], runtime: false},
+      {:oapi_generator, "~> 0.0.3", only: :dev, runtime: false},
       {:tesla, "~> 1.6"},
       {:finch, "~> 0.16"},
-      {:jason, ">= 1.0.0"},
-      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
+      {:jason, "~> 1.4"}
     ]
   end
 
