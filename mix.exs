@@ -30,7 +30,9 @@ defmodule OpenAI.MixProject do
       {:oapi_generator, "~> 0.0.3", only: :dev, runtime: false},
       {:tesla, "~> 1.6"},
       {:finch, "~> 0.16"},
-      {:jason, "~> 1.4"}
+      {:jason, "~> 1.4"},
+      {:bypass, "~> 2.1", only: :test},
+      {:stubidity, path: "../stubidity", only: :test}
     ]
   end
 
