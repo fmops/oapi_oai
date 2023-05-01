@@ -7,10 +7,6 @@ defmodule OpenAI.Client do
       :openai_base_url,
       "https://api.openai.com/v1"
     )},
-    {Tesla.Middleware.Headers,
-     [
-       {"content-type", "application/json"}
-     ]},
     Tesla.Middleware.JSON
   ]
 
