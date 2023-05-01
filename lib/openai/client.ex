@@ -25,7 +25,7 @@ defmodule OpenAI.Client do
       url: data.url,
       body: data.body)
     |> case do
-      {:ok, %Tesla.Env{status: 200, body: body}} ->
+      {:ok, %Tesla.Env{status: 200, body: body} = resp} ->
         struct = struct(data.response |> Enum.at(0) |> elem(1) |> elem(0))
         resp = Enum.reduce Map.to_list(struct), struct, fn {k, _}, acc ->
           case Map.fetch(body, Atom.to_string(k)) do
@@ -34,7 +34,8 @@ defmodule OpenAI.Client do
           end
         end
         {:ok, resp}
-      {:error, _error} ->
+      error ->
+        Logger.warn("Error: #{inspect(error)}")
         :error
     end
   end
