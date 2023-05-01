@@ -12,7 +12,7 @@ defmodule OpenAI.Client do
   ]
 
   def request(data) do
-    api_key = Keyword.get(data.opts, :openai_api_key)
+    api_key = Keyword.get(data.opts, :api_key)
     base_url = Keyword.get(data.opts, :base_url, "https://api.openai.com/v1")
 
     middleware =
@@ -42,6 +42,7 @@ defmodule OpenAI.Client do
     |> case do
       {:ok, %Tesla.Env{status: 200, body: body}} ->
         struct = struct(data.response |> Enum.at(0) |> elem(1) |> elem(0))
+
         resp =
           Enum.reduce(Map.to_list(struct), struct, fn {k, _}, acc ->
             case Map.fetch(body, Atom.to_string(k)) do

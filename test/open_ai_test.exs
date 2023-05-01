@@ -34,7 +34,7 @@ defmodule OpenAITest do
                    prompt: "Once upon a time",
                    model: "davinci"
                  },
-                 openai_api_key: "sk-foo",
+                 api_key: "sk-foo",
                  base_url: "http://localhost:#{bypass.port}/v1"
                )
 
@@ -73,7 +73,7 @@ defmodule OpenAITest do
                      %{role: "system", text: "Tell a joke."}
                    ]
                  },
-                 openai_api_key: "sk-foo",
+                 api_key: "sk-foo",
                  base_url: "http://localhost:#{bypass.port}/v1"
                )
 
@@ -108,7 +108,7 @@ defmodule OpenAITest do
                    model: "text-embedding-ada-002",
                    input: "Once upon a time"
                  },
-                 openai_api_key: "sk-foo",
+                 api_key: "sk-foo",
                  base_url: "http://localhost:#{bypass.port}/v1"
                )
 
