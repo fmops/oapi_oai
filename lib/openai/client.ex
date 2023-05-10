@@ -33,11 +33,17 @@ defmodule OpenAI.Client do
 
     tesla = Tesla.client(middleware)
 
+    # convert to JSON, deleting nil valued keys
+    body = data.body
+        |> Map.from_struct()
+        |> Enum.filter(fn {_, v} -> v != nil end)
+        |> Enum.into(%{})
+
     tesla
     |> Tesla.request(
       method: data.method,
       url: data.url,
-      body: data.body
+      body: body
     )
     |> case do
       {:ok, %Tesla.Env{status: 200, body: body}} ->
