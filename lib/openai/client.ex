@@ -34,10 +34,11 @@ defmodule OpenAI.Client do
     tesla = Tesla.client(middleware)
 
     # convert to JSON, deleting nil valued keys
-    body = data.body
-        |> Map.from_struct()
-        |> Enum.filter(fn {_, v} -> v != nil end)
-        |> Enum.into(%{})
+    body =
+      data.body
+      |> Map.from_struct()
+      |> Enum.filter(fn {_, v} -> v != nil end)
+      |> Enum.into(%{})
 
     tesla
     |> Tesla.request(
