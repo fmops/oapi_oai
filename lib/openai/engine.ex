@@ -2,6 +2,7 @@ defmodule OpenAI.Engine do
   @moduledoc """
   Provides struct and type for Engine
   """
+  use OpenAI.JasonEncoder
 
   @type t :: %__MODULE__{
           created: integer | nil,

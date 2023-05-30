@@ -2,6 +2,7 @@ defmodule OpenAI.CreateEmbeddingResponse do
   @moduledoc """
   Provides struct and type for CreateEmbeddingResponse
   """
+  use OpenAI.JasonEncoder
 
   @type t :: %__MODULE__{data: [map], model: String.t(), object: String.t(), usage: map}
 

@@ -2,6 +2,7 @@ defmodule OpenAI.ChatCompletionResponseMessage do
   @moduledoc """
   Provides struct and type for ChatCompletionResponseMessage
   """
+  use OpenAI.JasonEncoder
 
   @type t :: %__MODULE__{content: String.t(), role: String.t()}
 

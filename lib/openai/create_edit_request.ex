@@ -2,6 +2,7 @@ defmodule OpenAI.CreateEditRequest do
   @moduledoc """
   Provides struct and type for CreateEditRequest
   """
+  use OpenAI.JasonEncoder
 
   @type t :: %__MODULE__{
           input: String.t() | nil,

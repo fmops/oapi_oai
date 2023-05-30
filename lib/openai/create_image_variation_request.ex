@@ -2,6 +2,7 @@ defmodule OpenAI.CreateImageVariationRequest do
   @moduledoc """
   Provides struct and type for CreateImageVariationRequest
   """
+  use OpenAI.JasonEncoder
 
   @type t :: %__MODULE__{
           image: String.t(),

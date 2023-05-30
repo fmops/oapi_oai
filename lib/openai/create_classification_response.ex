@@ -2,6 +2,7 @@ defmodule OpenAI.CreateClassificationResponse do
   @moduledoc """
   Provides struct and type for CreateClassificationResponse
   """
+  use OpenAI.JasonEncoder
 
   @type t :: %__MODULE__{
           completion: String.t() | nil,

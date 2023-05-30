@@ -2,6 +2,7 @@ defmodule OpenAI.CreateFileRequest do
   @moduledoc """
   Provides struct and type for CreateFileRequest
   """
+  use OpenAI.JasonEncoder
 
   @type t :: %__MODULE__{file: String.t(), purpose: String.t()}
 

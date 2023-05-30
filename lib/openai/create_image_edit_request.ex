@@ -2,6 +2,7 @@ defmodule OpenAI.CreateImageEditRequest do
   @moduledoc """
   Provides struct and type for CreateImageEditRequest
   """
+  use OpenAI.JasonEncoder
 
   @type t :: %__MODULE__{
           image: String.t(),

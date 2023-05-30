@@ -2,6 +2,7 @@ defmodule OpenAI.CreateCompletionRequest do
   @moduledoc """
   Provides struct and type for CreateCompletionRequest
   """
+  use OpenAI.JasonEncoder
 
   @type t :: %__MODULE__{
           best_of: integer | nil,

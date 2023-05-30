@@ -2,6 +2,7 @@ defmodule OpenAI.CreateChatCompletionResponse do
   @moduledoc """
   Provides struct and type for CreateChatCompletionResponse
   """
+  use OpenAI.JasonEncoder
 
   @type t :: %__MODULE__{
           choices: [map],

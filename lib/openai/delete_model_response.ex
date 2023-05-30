@@ -2,6 +2,7 @@ defmodule OpenAI.DeleteModelResponse do
   @moduledoc """
   Provides struct and type for DeleteModelResponse
   """
+  use OpenAI.JasonEncoder
 
   @type t :: %__MODULE__{deleted: boolean, id: String.t(), object: String.t()}
 

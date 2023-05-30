@@ -2,6 +2,7 @@ defmodule OpenAI.FineTuneEvent do
   @moduledoc """
   Provides struct and type for FineTuneEvent
   """
+  use OpenAI.JasonEncoder
 
   @type t :: %__MODULE__{
           created_at: integer,

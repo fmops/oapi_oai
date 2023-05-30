@@ -2,6 +2,7 @@ defmodule OpenAI.CreateFineTuneRequest do
   @moduledoc """
   Provides struct and type for CreateFineTuneRequest
   """
+  use OpenAI.JasonEncoder
 
   @type t :: %__MODULE__{
           batch_size: integer | nil,

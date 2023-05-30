@@ -2,6 +2,7 @@ defmodule OpenAI.CreateAnswerRequest do
   @moduledoc """
   Provides struct and type for CreateAnswerRequest
   """
+  use OpenAI.JasonEncoder
 
   @type t :: %__MODULE__{
           documents: [String.t()] | nil,

@@ -2,6 +2,7 @@ defmodule OpenAI.CreateEditResponse do
   @moduledoc """
   Provides struct and type for CreateEditResponse
   """
+  use OpenAI.JasonEncoder
 
   @type t :: %__MODULE__{choices: [map], created: integer, object: String.t(), usage: map}
 

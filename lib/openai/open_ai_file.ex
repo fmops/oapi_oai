@@ -2,6 +2,7 @@ defmodule OpenAI.OpenAIFile do
   @moduledoc """
   Provides struct and type for OpenAIFile
   """
+  use OpenAI.JasonEncoder
 
   @type t :: %__MODULE__{
           bytes: integer,
