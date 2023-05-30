@@ -1,4 +1,4 @@
-defmodule OpenAI.OpenAi do
+defmodule OpenAI.OpenAI do
   @moduledoc """
   Provides API endpoints related to open ai
   """
@@ -16,7 +16,7 @@ defmodule OpenAI.OpenAi do
 
     client.request(%{
       args: [fine_tune_id: fine_tune_id],
-      call: {OpenAI.OpenAi, :cancel_fine_tune},
+      call: {OpenAI.OpenAI, :cancel_fine_tune},
       url: "/fine-tunes/#{fine_tune_id}/cancel",
       method: :post,
       response: [{200, :map}],
@@ -38,7 +38,7 @@ defmodule OpenAI.OpenAi do
 
     client.request(%{
       args: [body: body],
-      call: {OpenAI.OpenAi, :create_answer},
+      call: {OpenAI.OpenAI, :create_answer},
       url: "/answers",
       body: body,
       method: :post,
@@ -59,7 +59,7 @@ defmodule OpenAI.OpenAi do
 
     client.request(%{
       args: [body: body],
-      call: {OpenAI.OpenAi, :create_chat_completion},
+      call: {OpenAI.OpenAI, :create_chat_completion},
       url: "/chat/completions",
       body: body,
       method: :post,
@@ -89,7 +89,7 @@ defmodule OpenAI.OpenAi do
 
     client.request(%{
       args: [body: body],
-      call: {OpenAI.OpenAi, :create_classification},
+      call: {OpenAI.OpenAI, :create_classification},
       url: "/classifications",
       body: body,
       method: :post,
@@ -110,7 +110,7 @@ defmodule OpenAI.OpenAi do
 
     client.request(%{
       args: [body: body],
-      call: {OpenAI.OpenAi, :create_completion},
+      call: {OpenAI.OpenAI, :create_completion},
       url: "/completions",
       body: body,
       method: :post,
@@ -131,7 +131,7 @@ defmodule OpenAI.OpenAi do
 
     client.request(%{
       args: [body: body],
-      call: {OpenAI.OpenAi, :create_edit},
+      call: {OpenAI.OpenAI, :create_edit},
       url: "/edits",
       body: body,
       method: :post,
@@ -152,7 +152,7 @@ defmodule OpenAI.OpenAi do
 
     client.request(%{
       args: [body: body],
-      call: {OpenAI.OpenAi, :create_embedding},
+      call: {OpenAI.OpenAI, :create_embedding},
       url: "/embeddings",
       body: body,
       method: :post,
@@ -173,7 +173,7 @@ defmodule OpenAI.OpenAi do
 
     client.request(%{
       args: [body: body],
-      call: {OpenAI.OpenAi, :create_file},
+      call: {OpenAI.OpenAI, :create_file},
       url: "/files",
       body: body,
       method: :post,
@@ -198,7 +198,7 @@ defmodule OpenAI.OpenAi do
 
     client.request(%{
       args: [body: body],
-      call: {OpenAI.OpenAi, :create_fine_tune},
+      call: {OpenAI.OpenAI, :create_fine_tune},
       url: "/fine-tunes",
       body: body,
       method: :post,
@@ -218,7 +218,7 @@ defmodule OpenAI.OpenAi do
 
     client.request(%{
       args: [body: body],
-      call: {OpenAI.OpenAi, :create_image},
+      call: {OpenAI.OpenAI, :create_image},
       url: "/images/generations",
       body: body,
       method: :post,
@@ -238,7 +238,7 @@ defmodule OpenAI.OpenAi do
 
     client.request(%{
       args: [body: body],
-      call: {OpenAI.OpenAi, :create_image_edit},
+      call: {OpenAI.OpenAI, :create_image_edit},
       url: "/images/edits",
       body: body,
       method: :post,
@@ -259,7 +259,7 @@ defmodule OpenAI.OpenAi do
 
     client.request(%{
       args: [body: body],
-      call: {OpenAI.OpenAi, :create_image_variation},
+      call: {OpenAI.OpenAI, :create_image_variation},
       url: "/images/variations",
       body: body,
       method: :post,
@@ -280,7 +280,7 @@ defmodule OpenAI.OpenAi do
 
     client.request(%{
       args: [body: body],
-      call: {OpenAI.OpenAi, :create_moderation},
+      call: {OpenAI.OpenAI, :create_moderation},
       url: "/moderations",
       body: body,
       method: :post,
@@ -306,7 +306,7 @@ defmodule OpenAI.OpenAi do
 
     client.request(%{
       args: [engine_id: engine_id, body: body],
-      call: {OpenAI.OpenAi, :create_search},
+      call: {OpenAI.OpenAI, :create_search},
       url: "/engines/#{engine_id}/search",
       body: body,
       method: :post,
@@ -327,7 +327,7 @@ defmodule OpenAI.OpenAi do
 
     client.request(%{
       args: [body: body],
-      call: {OpenAI.OpenAi, :create_transcription},
+      call: {OpenAI.OpenAI, :create_transcription},
       url: "/audio/transcriptions",
       body: body,
       method: :post,
@@ -348,7 +348,7 @@ defmodule OpenAI.OpenAi do
 
     client.request(%{
       args: [body: body],
-      call: {OpenAI.OpenAi, :create_translation},
+      call: {OpenAI.OpenAI, :create_translation},
       url: "/audio/translations",
       body: body,
       method: :post,
@@ -368,7 +368,7 @@ defmodule OpenAI.OpenAi do
 
     client.request(%{
       args: [file_id: file_id],
-      call: {OpenAI.OpenAi, :delete_file},
+      call: {OpenAI.OpenAI, :delete_file},
       url: "/files/#{file_id}",
       method: :delete,
       response: [{200, {OpenAI.DeleteFileResponse, :t}}],
@@ -386,7 +386,7 @@ defmodule OpenAI.OpenAi do
 
     client.request(%{
       args: [model: model],
-      call: {OpenAI.OpenAi, :delete_model},
+      call: {OpenAI.OpenAI, :delete_model},
       url: "/models/#{model}",
       method: :delete,
       response: [{200, {OpenAI.DeleteModelResponse, :t}}],
@@ -404,7 +404,7 @@ defmodule OpenAI.OpenAi do
 
     client.request(%{
       args: [file_id: file_id],
-      call: {OpenAI.OpenAi, :download_file},
+      call: {OpenAI.OpenAI, :download_file},
       url: "/files/#{file_id}/content",
       method: :get,
       response: [{200, :string}],
@@ -421,7 +421,7 @@ defmodule OpenAI.OpenAi do
     client = opts[:client] || @default_client
 
     client.request(%{
-      call: {OpenAI.OpenAi, :list_engines},
+      call: {OpenAI.OpenAI, :list_engines},
       url: "/engines",
       method: :get,
       response: [{200, {OpenAI.ListEnginesResponse, :t}}],
@@ -438,7 +438,7 @@ defmodule OpenAI.OpenAi do
     client = opts[:client] || @default_client
 
     client.request(%{
-      call: {OpenAI.OpenAi, :list_files},
+      call: {OpenAI.OpenAI, :list_files},
       url: "/files",
       method: :get,
       response: [{200, {OpenAI.ListFilesResponse, :t}}],
@@ -471,7 +471,7 @@ defmodule OpenAI.OpenAi do
 
     client.request(%{
       args: [fine_tune_id: fine_tune_id],
-      call: {OpenAI.OpenAi, :list_fine_tune_events},
+      call: {OpenAI.OpenAI, :list_fine_tune_events},
       url: "/fine-tunes/#{fine_tune_id}/events",
       method: :get,
       query: query,
@@ -490,7 +490,7 @@ defmodule OpenAI.OpenAi do
     client = opts[:client] || @default_client
 
     client.request(%{
-      call: {OpenAI.OpenAi, :list_fine_tunes},
+      call: {OpenAI.OpenAI, :list_fine_tunes},
       url: "/fine-tunes",
       method: :get,
       response: [{200, {OpenAI.ListFineTunesResponse, :t}}],
@@ -507,7 +507,7 @@ defmodule OpenAI.OpenAi do
     client = opts[:client] || @default_client
 
     client.request(%{
-      call: {OpenAI.OpenAi, :list_models},
+      call: {OpenAI.OpenAI, :list_models},
       url: "/models",
       method: :get,
       response: [{200, {OpenAI.ListModelsResponse, :t}}],
@@ -525,7 +525,7 @@ defmodule OpenAI.OpenAi do
 
     client.request(%{
       args: [engine_id: engine_id],
-      call: {OpenAI.OpenAi, :retrieve_engine},
+      call: {OpenAI.OpenAI, :retrieve_engine},
       url: "/engines/#{engine_id}",
       method: :get,
       response: [{200, :map}],
@@ -543,7 +543,7 @@ defmodule OpenAI.OpenAi do
 
     client.request(%{
       args: [file_id: file_id],
-      call: {OpenAI.OpenAi, :retrieve_file},
+      call: {OpenAI.OpenAI, :retrieve_file},
       url: "/files/#{file_id}",
       method: :get,
       response: [{200, :map}],
@@ -564,7 +564,7 @@ defmodule OpenAI.OpenAi do
 
     client.request(%{
       args: [fine_tune_id: fine_tune_id],
-      call: {OpenAI.OpenAi, :retrieve_fine_tune},
+      call: {OpenAI.OpenAI, :retrieve_fine_tune},
       url: "/fine-tunes/#{fine_tune_id}",
       method: :get,
       response: [{200, :map}],
@@ -582,7 +582,7 @@ defmodule OpenAI.OpenAi do
 
     client.request(%{
       args: [model: model],
-      call: {OpenAI.OpenAi, :retrieve_model},
+      call: {OpenAI.OpenAI, :retrieve_model},
       url: "/models/#{model}",
       method: :get,
       response: [{200, :map}],
