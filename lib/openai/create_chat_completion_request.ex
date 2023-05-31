@@ -2,6 +2,7 @@ defmodule OpenAI.CreateChatCompletionRequest do
   @moduledoc """
   Provides struct and type for CreateChatCompletionRequest
   """
+  use OpenAI.JasonEncoder
 
   @type t :: %__MODULE__{
           frequency_penalty: number | nil,

@@ -2,6 +2,7 @@ defmodule OpenAI.ListFilesResponse do
   @moduledoc """
   Provides struct and type for ListFilesResponse
   """
+  use OpenAI.JasonEncoder
 
   @type t :: %__MODULE__{data: [map], object: String.t()}
 

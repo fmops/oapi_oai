@@ -2,6 +2,7 @@ defmodule OpenAI.CreateModerationRequest do
   @moduledoc """
   Provides struct and type for CreateModerationRequest
   """
+  use OpenAI.JasonEncoder
 
   @type t :: %__MODULE__{input: String.t() | [String.t()], model: String.t() | nil}
 

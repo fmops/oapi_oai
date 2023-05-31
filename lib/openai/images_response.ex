@@ -2,6 +2,7 @@ defmodule OpenAI.ImagesResponse do
   @moduledoc """
   Provides struct and type for ImagesResponse
   """
+  use OpenAI.JasonEncoder
 
   @type t :: %__MODULE__{created: integer, data: [map]}
 

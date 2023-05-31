@@ -2,6 +2,7 @@ defmodule OpenAI.CreateEmbeddingRequest do
   @moduledoc """
   Provides struct and type for CreateEmbeddingRequest
   """
+  use OpenAI.JasonEncoder
 
   @type t :: %__MODULE__{
           input: String.t() | [integer] | [String.t()] | [[integer]],

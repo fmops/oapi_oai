@@ -2,6 +2,7 @@ defmodule OpenAI.DeleteFileResponse do
   @moduledoc """
   Provides struct and type for DeleteFileResponse
   """
+  use OpenAI.JasonEncoder
 
   @type t :: %__MODULE__{deleted: boolean, id: String.t(), object: String.t()}
 

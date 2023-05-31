@@ -2,6 +2,7 @@ defmodule OpenAI.FineTune do
   @moduledoc """
   Provides struct and type for FineTune
   """
+  use OpenAI.JasonEncoder
 
   @type t :: %__MODULE__{
           created_at: integer,

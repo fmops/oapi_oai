@@ -2,6 +2,7 @@ defmodule OpenAI.CreateModerationResponse do
   @moduledoc """
   Provides struct and type for CreateModerationResponse
   """
+  use OpenAI.JasonEncoder
 
   @type t :: %__MODULE__{id: String.t(), model: String.t(), results: [map]}
 

@@ -2,6 +2,7 @@ defmodule OpenAI.CreateSearchResponse do
   @moduledoc """
   Provides struct and type for CreateSearchResponse
   """
+  use OpenAI.JasonEncoder
 
   @type t :: %__MODULE__{data: [map] | nil, model: String.t() | nil, object: String.t() | nil}
 

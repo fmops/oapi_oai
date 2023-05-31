@@ -2,6 +2,7 @@ defmodule OpenAI.CreateImageRequest do
   @moduledoc """
   Provides struct and type for CreateImageRequest
   """
+  use OpenAI.JasonEncoder
 
   @type t :: %__MODULE__{
           n: integer | nil,

@@ -2,6 +2,7 @@ defmodule OpenAI.ListFineTunesResponse do
   @moduledoc """
   Provides struct and type for ListFineTunesResponse
   """
+  use OpenAI.JasonEncoder
 
   @type t :: %__MODULE__{data: [map], object: String.t()}
 

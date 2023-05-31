@@ -2,6 +2,7 @@ defmodule OpenAI.CreateTranscriptionRequest do
   @moduledoc """
   Provides struct and type for CreateTranscriptionRequest
   """
+  use OpenAI.JasonEncoder
 
   @type t :: %__MODULE__{
           file: String.t(),

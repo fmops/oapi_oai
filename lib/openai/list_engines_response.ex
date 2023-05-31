@@ -2,6 +2,7 @@ defmodule OpenAI.ListEnginesResponse do
   @moduledoc """
   Provides struct and type for ListEnginesResponse
   """
+  use OpenAI.JasonEncoder
 
   @type t :: %__MODULE__{data: [map], object: String.t()}
 
